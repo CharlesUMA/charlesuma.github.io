@@ -20,16 +20,16 @@
   <title>Box's Blog</title>
 
   
-    <meta name="description" content="技术点：抖动时使用的randomNoise函数。  RGB颜色分离故障  RGB Split Glitch 核心是对红绿蓝三个通道采用不同的uv偏移值进行分别采样，一般会选取一个通道采用原始uv值，另外两个通道进行uv抖动后再进行采样。   错位图块故障  Image Block Glitch 核心是生成随机强度且纵横交错的图块，再基于图块的强度，进行uv的抖动采样。   错位线条故障  Li">
+    <meta name="description" content="技术点：抖动时使用的randomNoise函数。https:&#x2F;&#x2F;developer.unity.cn&#x2F;projects&#x2F;5f3b8492edbc2a10ed72ea75  RGB颜色分离故障  RGB Split Glitch 核心是对红绿蓝三个通道采用不同的uv偏移值进行分别采样，一般会选取一个通道采用原始uv值，另外两个通道进行uv抖动后再进行采样。   错位图块故障  Image Blo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Box&#39;s Blog">
 <meta property="og:url" content="https://charlesuma.github.io/2024/12/29/render/glitch/index.html">
 <meta property="og:site_name" content="Box&#39;s Blog">
-<meta property="og:description" content="技术点：抖动时使用的randomNoise函数。  RGB颜色分离故障  RGB Split Glitch 核心是对红绿蓝三个通道采用不同的uv偏移值进行分别采样，一般会选取一个通道采用原始uv值，另外两个通道进行uv抖动后再进行采样。   错位图块故障  Image Block Glitch 核心是生成随机强度且纵横交错的图块，再基于图块的强度，进行uv的抖动采样。   错位线条故障  Li">
+<meta property="og:description" content="技术点：抖动时使用的randomNoise函数。https:&#x2F;&#x2F;developer.unity.cn&#x2F;projects&#x2F;5f3b8492edbc2a10ed72ea75  RGB颜色分离故障  RGB Split Glitch 核心是对红绿蓝三个通道采用不同的uv偏移值进行分别采样，一般会选取一个通道采用原始uv值，另外两个通道进行uv抖动后再进行采样。   错位图块故障  Image Blo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://charlesuma.github.io/assets/render/glitch/glitch.jpg">
 <meta property="article:published_time" content="2024-12-28T16:37:20.000Z">
-<meta property="article:modified_time" content="2024-12-29T14:11:02.904Z">
+<meta property="article:modified_time" content="2024-12-29T14:12:09.880Z">
 <meta property="article:author" content="Charles Liu">
 <meta property="article:tag" content="渲染">
 <meta name="twitter:card" content="summary_large_image">
@@ -57,7 +57,7 @@
 <div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="/assets/avatar.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/"><div class="main" ff="title">Box's Blog</div><div class="sub normal cap">Record work and life ~</div><div class="sub hover cap" style="opacity:0"> Designed by CharlesLiu</div></a></div></header>
+<header class="header"><div class="logo-wrap"><div class="icon"><img no-lazy class="icon" src="/assets/avatar.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></div><a class="title" href="/"><div class="main" ff="title">Box's Blog</div><div class="sub normal cap">记录工作与生活~</div><div class="sub hover cap" style="opacity:0"> Designed by CharlesLiu</div></a></div></header>
 
 <div class="nav-area">
 <div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
@@ -81,12 +81,12 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-28T16:37:20.000Z">2024-12-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-29T14:11:02.904Z">2024-12-29</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-28T16:37:20.000Z">2024-12-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-29T14:12:09.880Z">2024-12-29</time></span></div></div></div>
     
   </div>
   </div><article class="md-text content"><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/../../assets/render/glitch/glitch.jpg" alt="glitch.jpg"></p>
 <blockquote>
-<p>技术点：抖动时使用的randomNoise函数。</p>
+<p>技术点：抖动时使用的randomNoise函数。<br><a target="_blank" rel="noopener" href="https://developer.unity.cn/projects/5f3b8492edbc2a10ed72ea75">https://developer.unity.cn/projects/5f3b8492edbc2a10ed72ea75</a></p>
 </blockquote>
 <h3 id="RGB颜色分离故障"><a href="#RGB颜色分离故障" class="headerlink" title="RGB颜色分离故障"></a>RGB颜色分离故障</h3><blockquote>
 <ul>
@@ -162,12 +162,12 @@
         <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://charlesuma.github.io/2024/12/29/render/glitch/" /></div>
         <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot;)"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/b32ef3da1162a.svg" /></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://charlesuma.github.io/2024/12/29/render/glitch/&title= - Box's Blog&pics=/assets/render/glitch/glitch.jpg&summary=
 
-技术点：抖动时使用的randomNoise函数。
+技术点：抖动时使用的randomNoise函数。https://developer.unity.cn/projects/5f3b8492edbc2a10ed72ea75
 
 RGB颜色分离故障
 
 RGB Split Glitch
-核心是对红绿蓝三个通道采用不同的uv偏移值进行分别采样，一般会选取一个通道采用原始uv值，另外两个通道进行uv抖动后再进行..."><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject= - Box's Blog&amp;body=https://charlesuma.github.io/2024/12/29/render/glitch/"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+核..."><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject= - Box's Blog&amp;body=https://charlesuma.github.io/2024/12/29/render/glitch/"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
         
         <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
           <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://charlesuma.github.io/2024/12/29/render/glitch/"/>
