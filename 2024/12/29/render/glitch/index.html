@@ -20,12 +20,12 @@
   <title>Glitch - 故障效果 - Box's Blog</title>
 
   
-    <meta name="description" content="Glitch泛指故障效果，在影视游戏中经常出现，常用于表现科幻的场景，或者增强画面的冲击力。  图块抖动故障  主要原理是对uv进行分层，然后使用噪声函数对不同层级的uv进行抖动。half tileBaseValue &#x3D; input.uv.y; half tile &#x3D; ceil(tileBaseValue * _JitterTileDensity * aspectRatio">
+    <meta name="description" content="Glitch泛指故障效果，在影视游戏中经常出现，常用于表现科幻的场景，或者增强画面的冲击力。  图块抖动故障  主要原理是对uv进行分层，然后使用噪声函数对不同层级的uv进行抖动。123456half tileBaseValue &#x3D; input.uv.y;half tile &#x3D; ceil(tileBaseValue * _JitterTileDensity * aspectRatio);hal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Glitch - 故障效果">
 <meta property="og:url" content="https://charlesuma.github.io/2024/12/29/render/glitch/index.html">
 <meta property="og:site_name" content="Box&#39;s Blog">
-<meta property="og:description" content="Glitch泛指故障效果，在影视游戏中经常出现，常用于表现科幻的场景，或者增强画面的冲击力。  图块抖动故障  主要原理是对uv进行分层，然后使用噪声函数对不同层级的uv进行抖动。half tileBaseValue &#x3D; input.uv.y; half tile &#x3D; ceil(tileBaseValue * _JitterTileDensity * aspectRatio">
+<meta property="og:description" content="Glitch泛指故障效果，在影视游戏中经常出现，常用于表现科幻的场景，或者增强画面的冲击力。  图块抖动故障  主要原理是对uv进行分层，然后使用噪声函数对不同层级的uv进行抖动。123456half tileBaseValue &#x3D; input.uv.y;half tile &#x3D; ceil(tileBaseValue * _JitterTileDensity * aspectRatio);hal">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://charlesuma.github.io/assets/render/glitch/glitch.jpg">
 <meta property="og:image" content="https://charlesuma.github.io/assets/render/glitch/tile-jitter-glitch.png">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://charlesuma.github.io/assets/render/glitch/noise-5.png">
 <meta property="og:image" content="https://charlesuma.github.io/assets/render/glitch/noise-6.png">
 <meta property="article:published_time" content="2024-12-28T16:37:20.000Z">
-<meta property="article:modified_time" content="2025-01-04T05:02:06.739Z">
+<meta property="article:modified_time" content="2025-01-04T05:09:20.067Z">
 <meta property="article:author" content="Charles Liu">
 <meta property="article:tag" content="渲染">
 <meta name="twitter:card" content="summary_large_image">
@@ -89,7 +89,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-28T16:37:20.000Z">2024-12-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-01-04T05:02:06.739Z">2025-01-04</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-28T16:37:20.000Z">2024-12-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-01-04T05:09:20.067Z">2025-01-04</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -106,22 +106,11 @@
 </blockquote>
 <h3 id="图块抖动故障"><a href="#图块抖动故障" class="headerlink" title="图块抖动故障"></a>图块抖动故障</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/../../assets/render/glitch/tile-jitter-glitch.png" alt="tile-jitter-glitch.png"></p>
 <ul>
-<li>主要原理是对uv进行分层，然后使用噪声函数对不同层级的uv进行抖动。<pre class="line-numbers language-hlsl" data-language="hlsl"><code class="language-hlsl">half tileBaseValue &#x3D; input.uv.y;
-half tile &#x3D; ceil(tileBaseValue * _JitterTileDensity * aspectRatio);
-half speed &#x3D; _JitterSpeed &#x2F; _JitterTileDensity * 5;
-half randomValue &#x3D; RandomNoise(_Time.w * speed * tile);
-half jitterValue &#x3D; randomValue * jitterPower;
-input.uv.x +&#x3D; jitterValue;</code></pre></li>
+<li>主要原理是对uv进行分层，然后使用噪声函数对不同层级的uv进行抖动。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">half tileBaseValue = input.uv.y;</span><br><span class="line">half tile = <span class="built_in">ceil</span>(tileBaseValue * _JitterTileDensity * aspectRatio);</span><br><span class="line">half speed = _JitterSpeed / _JitterTileDensity * <span class="number">5</span>;</span><br><span class="line">half randomValue = <span class="built_in">RandomNoise</span>(_Time.w * speed * tile);</span><br><span class="line">half jitterValue = randomValue * jitterPower;</span><br><span class="line">input.uv.x += jitterValue;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="RGB颜色分离故障"><a href="#RGB颜色分离故障" class="headerlink" title="RGB颜色分离故障"></a>RGB颜色分离故障</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/../../assets/render/glitch/rgb-split-glitch.png" alt="rgb-split-glitch.png"></p>
 <ul>
-<li>主要原理是对RGB三个通道采用不同的uv偏移值进行分别采样。一般会选取一个通道采用原始uv值，另两个通道使用偏移后的uv进行采样。<pre class="line-numbers language-hlsl" data-language="hlsl"><code class="language-hlsl">half rgbSplitValue &#x3D; _RGBSplitPower * jitterPower;
-half2 uvR &#x3D; half2(input.uv.x + rgbSplitValue, input.uv.y);
-half2 uvB &#x3D; half2(input.uv.x - rgbSplitValue, input.uv.y);
-half4 colorR &#x3D; SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uvR);
-half4 colorG &#x3D; SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, input.uv);
-half4 colorB &#x3D; SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uvB);
-half colorA &#x3D; max(max(colorR.a, colorG.a), colorB.a) - rgbSplitValue * _RGBSplitFadeSpeed;</code></pre></li>
+<li>主要原理是对RGB三个通道采用不同的uv偏移值进行分别采样。一般会选取一个通道采用原始uv值，另两个通道使用偏移后的uv进行采样。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">half rgbSplitValue = _RGBSplitPower * jitterPower;</span><br><span class="line">half2 uvR = <span class="built_in">half2</span>(input.uv.x + rgbSplitValue, input.uv.y);</span><br><span class="line">half2 uvB = <span class="built_in">half2</span>(input.uv.x - rgbSplitValue, input.uv.y);</span><br><span class="line">half4 colorR = <span class="built_in">SAMPLE_TEXTURE2D</span>(_MainTex, sampler_MainTex, uvR);</span><br><span class="line">half4 colorG = <span class="built_in">SAMPLE_TEXTURE2D</span>(_MainTex, sampler_MainTex, input.uv);</span><br><span class="line">half4 colorB = <span class="built_in">SAMPLE_TEXTURE2D</span>(_MainTex, sampler_MainTex, uvB);</span><br><span class="line">half colorA = <span class="built_in">max</span>(<span class="built_in">max</span>(colorR.a, colorG.a), colorB.a) - rgbSplitValue * _RGBSplitFadeSpeed;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="噪声模拟函数"><a href="#噪声模拟函数" class="headerlink" title="噪声模拟函数"></a>噪声模拟函数</h3><ul>
 <li>f(x) &#x3D; frac(x)：<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/../../assets/render/glitch/noise-1.png" alt="noise-1.png"></li>
@@ -149,7 +138,7 @@ Glitch泛指故障效果，在影视游戏中经常出现，常用于表现科�
 
 图块抖动故障
 
-主要原理是对uv进行分层，然后使用噪声函数对不同层级的uv进行抖动。half tileBaseValue &#x3D;..."><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=Glitch - 故障效果 - Box's Blog&amp;body=https://charlesuma.github.io/2024/12/29/render/glitch/"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
+主要原理是对uv进行分层，然后使用噪声函数对不同层级的uv进行抖动。123456half tileBaseValue ..."><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/80c07e4dbb303.svg" /></a><a class="social share-item email" href="mailto:?subject=Glitch - 故障效果 - Box's Blog&amp;body=https://charlesuma.github.io/2024/12/29/render/glitch/"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/a1b00e20f425d.svg" /></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
         
         <div class="qrcode" id="qrcode-wechat" style="opacity:0;height:0">
           <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://charlesuma.github.io/2024/12/29/render/glitch/"/>
