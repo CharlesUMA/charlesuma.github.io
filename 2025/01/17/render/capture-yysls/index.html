@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/assets/blog/render/capture-yysls/yysls.png">
 <meta property="article:published_time" content="2025-01-17T06:41:16.000Z">
-<meta property="article:modified_time" content="2025-01-19T05:18:46.535Z">
+<meta property="article:modified_time" content="2025-01-22T03:34:55.123Z">
 <meta property="article:author" content="Box">
 <meta property="article:tag" content="截帧分析">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "http://example.com/2025/01/17/render/capture-yysls/",
   "image": "http://example.com/assets/blog/render/capture-yysls/yysls.png",
   "datePublished": "2025-01-17T06:41:16.000Z",
-  "dateModified": "2025-01-19T05:18:46.535Z",
+  "dateModified": "2025-01-22T03:34:55.123Z",
   "author": [
     {
       "@type": "Person",
@@ -167,141 +167,291 @@ btf.addGlobalFn('pjaxSend', () => {
   Pace.restart()
 }, 'pace_restart')
 
-</script><link rel="stylesheet" href="/css/loading/barber-shop.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/assets/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/page/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/page/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-chess-knight"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/page/animate/"><i class="fa-fw fas fa-video"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/page/movies/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/daily/"><i class="fa-fw fas fa-coffee"></i><span> 日常</span></a></li><li><a class="site-page child" href="/page/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅游</span></a></li><li><a class="site-page child" href="/page/feeling/"><i class="fa-fw fas fa-star"></i><span> 感悟</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-layer-group"></i><span> 更多</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/todo/"><i class="fa-fw fas fa-list-ul"></i><span> TODO</span></a></li><li><a class="site-page child" href="/page/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></li><li><a class="site-page child" href="/page/about/"><i class="fa-fw fas fa-scroll"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/assets/blog/render/capture-yysls/yysls.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/assets/icon/wing.svg" alt="Logo"><span class="site-name">Box</span></a><a class="nav-page-title" href="/"><span class="site-name">截帧分析 - 燕云十六声</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/page/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/page/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-chess-knight"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/page/animate/"><i class="fa-fw fas fa-video"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/page/movies/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/daily/"><i class="fa-fw fas fa-coffee"></i><span> 日常</span></a></li><li><a class="site-page child" href="/page/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅游</span></a></li><li><a class="site-page child" href="/page/feeling/"><i class="fa-fw fas fa-star"></i><span> 感悟</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-layer-group"></i><span> 更多</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/todo/"><i class="fa-fw fas fa-list-ul"></i><span> TODO</span></a></li><li><a class="site-page child" href="/page/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></li><li><a class="site-page child" href="/page/about/"><i class="fa-fw fas fa-scroll"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">截帧分析 - 燕云十六声</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-17T06:41:16.000Z" title="发表于 2025-01-17 14:41:16">2025-01-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-19T05:18:46.535Z" title="更新于 2025-01-19 13:18:46">2025-01-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%B2%E6%9F%93/">渲染</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">864</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+</script><link rel="stylesheet" href="/css/loading/barber-shop.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/assets/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/page/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/page/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-chess-knight"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/page/animate/"><i class="fa-fw fas fa-video"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/page/movies/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/daily/"><i class="fa-fw fas fa-coffee"></i><span> 日常</span></a></li><li><a class="site-page child" href="/page/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅游</span></a></li><li><a class="site-page child" href="/page/feeling/"><i class="fa-fw fas fa-star"></i><span> 感悟</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-layer-group"></i><span> 更多</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/todo/"><i class="fa-fw fas fa-list-ul"></i><span> TODO</span></a></li><li><a class="site-page child" href="/page/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></li><li><a class="site-page child" href="/page/about/"><i class="fa-fw fas fa-scroll"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/assets/blog/render/capture-yysls/yysls.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/assets/icon/wing.svg" alt="Logo"><span class="site-name">Box</span></a><a class="nav-page-title" href="/"><span class="site-name">截帧分析 - 燕云十六声</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/page/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/page/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-chess-knight"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/game/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/page/animate/"><i class="fa-fw fas fa-video"></i><span> 动漫</span></a></li><li><a class="site-page child" href="/page/movies/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/daily/"><i class="fa-fw fas fa-coffee"></i><span> 日常</span></a></li><li><a class="site-page child" href="/page/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅游</span></a></li><li><a class="site-page child" href="/page/feeling/"><i class="fa-fw fas fa-star"></i><span> 感悟</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-layer-group"></i><span> 更多</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/page/todo/"><i class="fa-fw fas fa-list-ul"></i><span> TODO</span></a></li><li><a class="site-page child" href="/page/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></li><li><a class="site-page child" href="/page/about/"><i class="fa-fw fas fa-scroll"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">截帧分析 - 燕云十六声</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-17T06:41:16.000Z" title="发表于 2025-01-17 14:41:16">2025-01-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-22T03:34:55.123Z" title="更新于 2025-01-22 11:34:55">2025-01-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B8%B2%E6%9F%93/">渲染</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">864</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
 <p>燕云使用了延迟渲染的方式，本文将根据个人的理解对其进行截帧分析。</p>
 </blockquote>
 <span id="more"></span>
 
 <h1 id="截取场景"><a href="#截取场景" class="headerlink" title="截取场景"></a>截取场景</h1><ul>
-<li>使用RenderDoc对MuMu模拟器下运行的燕云进行截帧。（Vulkan模式）<br><img src="/../../assets/blog/render/capture-yysls/capture-scene.png" alt="capture-scene.png"></li>
+<li>使用RenderDoc对MuMu模拟器下运行的燕云进行截帧。（Vulkan模式）
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/capture-scene.png" alt="">
+          </td> 
+        </tr>
+      </table></li>
 </ul>
 <h1 id="GPU粒子输出"><a href="#GPU粒子输出" class="headerlink" title="GPU粒子输出"></a>GPU粒子输出</h1><ul>
-<li>最开始输出了四张RT，在后面绘制粒子的时候会用到，应该是保存了GPU粒子系统输出的结果，在绘制粒子的时候控制粒子的状态。（256x256）</li>
-</ul>
-<table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gpu-noise-01.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gpu-noise-02.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gpu-noise-03.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gpu-noise-04.png">
-</table>
+<li>最开始输出了四张RT，在后面绘制粒子的时候会用到，应该是保存了GPU粒子系统输出的结果，在绘制粒子的时候控制粒子的状态。（256x256）<table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gpu-noise-01.png" alt="">
+      </td>
 
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gpu-noise-02.png" alt="">
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gpu-noise-03.png" alt="">
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gpu-noise-04.png" alt="">
+      </td></tr>
+</table></li>
+</ul>
 <h1 id="绘制阴影图"><a href="#绘制阴影图" class="headerlink" title="绘制阴影图"></a>绘制阴影图</h1><ul>
-<li>绘制了角色的阴影，但没有截取到其他对象的阴影绘制过程，猜测可能是用了阴影缓存和隔帧更新的方案，不会每帧对所有对象的阴影都进行绘制；而且每次绘制阴影时，只会绘制一部分，像是3、4两张图一张用来采样，一张用来绘制阴影，5、6估计也是相同的作用。（1024x1024x6）</li>
-</ul>
-<table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/shadow-1.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/shadow-2.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/shadow-3.png">
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/shadow-4.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/shadow-5.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/shadow-6.png">
-</table>
+<li>绘制了角色的阴影，但没有截取到其他对象的阴影绘制过程，猜测可能是用了阴影缓存和隔帧更新的方案，不会每帧对所有对象的阴影都进行绘制；而且每次绘制阴影时，只会绘制一部分，像是3、4两张图一张用来采样，一张用来绘制阴影，5、6估计也是相同的作用。（1024x1024x6）<table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/shadow-1.png" alt="">
+      </td>
 
+      <td>
+        <img src="/assets/blog/render/capture-yysls/shadow-2.png" alt="">
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/shadow-3.png" alt="">
+      </td></tr>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/shadow-4.png" alt="">
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/shadow-5.png" alt="">
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/shadow-6.png" alt="">
+      </td></tr>
+</table></li>
+</ul>
 <h1 id="填充GBuffer"><a href="#填充GBuffer" class="headerlink" title="填充GBuffer"></a>填充GBuffer</h1><ul>
 <li>一共使用了5张RT，渲染顺序：远景-&gt;角色-&gt;地形-&gt;物件-&gt;树干-&gt;花-&gt;头发-&gt;衣物-&gt;公告板草-&gt;插片草-&gt;公告板树-&gt;树叶-&gt;实体粒子（蝴蝶）-&gt; 地表贴花。（省电：1200x675 | 平衡：1280x720 | 质量和极致：1300x731）<ul>
-<li><p>GBuffer0（R11G11B10）：绘制了角色和落叶的光照。<br><img src="/../../assets/blog/render/capture-yysls/gbuffer0.png" alt="gbuffer0.png"></p>
+<li><p>GBuffer0（R11G11B10）：绘制了角色和落叶的光照。</p>
+
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/gbuffer0.png" alt="">
+          </td> 
+        </tr>
+      </table>
 </li>
 <li><p>GBuffer1（R8G8B8A8）：RGB记录了基色，A像是AO。</p>
+<table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gbuffer1-rgb.png" alt="">
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gbuffer1-a.png" alt="">
+      </td></tr>
+</table>
 </li>
-</ul>
+<li><p>GBuffer2（R8G8B8A8）：R？G？B？A为草的模拟阴影。</p>
 <table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gbuffer1-rgb.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gbuffer1-a.png">
-</table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gbuffer2-r.png" alt="">
+      </td>
 
-<ul>
-<li>GBuffer2（R8G8B8A8）：R？G？B？A为草的模拟阴影。</li>
-</ul>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gbuffer2-g.png" alt="">
+      </td></tr>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gbuffer2-b.png" alt="">
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gbuffer2-a.png" alt="">
+      </td></tr>
+</table>
+</li>
+<li><p>GBuffer3（R8G8B8A8）：RGB为法线，A？</p>
 <table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gbuffer2-r.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gbuffer2-g.png">
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gbuffer2-b.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gbuffer2-a.png">
-</table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gbuffer3-rgb.png" alt="">
+      </td>
 
-<ul>
-<li>GBuffer3（R8G8B8A8）：RGB为法线，A？</li>
-</ul>
-<table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gbuffer3-rgb.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/gbuffer3-a.png">
+      <td>
+        <img src="/assets/blog/render/capture-yysls/gbuffer3-a.png" alt="">
+      </td></tr>
 </table>
+</li>
+<li><p>GBuffer4（R32）：深度图</p>
 
-<ul>
-<li>GBuffer4（R32）：深度图<br><img src="/../../assets/blog/render/capture-yysls/gbuffer4.png" alt="gbuffer4.png"></li>
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/gbuffer4.png" alt="">
+          </td> 
+        </tr>
+      </table></li>
 </ul>
 </li>
 </ul>
 <h1 id="采样阴影图"><a href="#采样阴影图" class="headerlink" title="采样阴影图"></a>采样阴影图</h1><ul>
-<li>把阴影绘制到GBuffer2的A通道上（草没有阴影）</li>
-</ul>
-<table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/draw-shadow-1.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/draw-shadow-2.png">
-</table>
+<li>把阴影绘制到GBuffer2的A通道上（草没有阴影）<table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/draw-shadow-1.png" alt="">
+      </td>
 
+      <td>
+        <img src="/assets/blog/render/capture-yysls/draw-shadow-2.png" alt="">
+      </td></tr>
+</table></li>
+</ul>
 <h1 id="绘制光照"><a href="#绘制光照" class="headerlink" title="绘制光照"></a>绘制光照</h1><ul>
-<li>依次绘制物件-&gt;模型植被-&gt;公告板植被的光照<br><img src="/../../assets/blog/render/capture-yysls/draw-lighting.png" alt="draw-lighting.png"></li>
+<li>依次绘制物件-&gt;模型植被-&gt;公告板植被的光照
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/draw-lighting.png" alt="">
+          </td> 
+        </tr>
+      </table></li>
 </ul>
 <h1 id="绘制天空"><a href="#绘制天空" class="headerlink" title="绘制天空"></a>绘制天空</h1><table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/draw-sky-2.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/draw-sky-1.png"> 八面体压缩
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/draw-sky-2.png" alt="">
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/draw-sky-1.png" alt="八面体压缩">
+        <div style="text-align: center; font-size: 12px; color: #888888"> 八面体压缩 </div>
+      </td></tr>
 </table>
 
 <h1 id="绘制深度图及深度雾RT"><a href="#绘制深度图及深度雾RT" class="headerlink" title="绘制深度图及深度雾RT"></a>绘制深度图及深度雾RT</h1><ul>
-<li>绘制带有mipmap的深度图（1024x512 R16）（省电没有这一步 | 平衡：3级mips | 质量和极致：10级mips）<br><img src="/../../assets/blog/render/capture-yysls/depth-mips.png" alt="depth-mips.png"></li>
-<li>由带有mipmap的深度图、法线图、阴影图生成，生成了不知道有什么作用的RT，猜测是用来实现深度雾（省电没有这一步）</li>
-</ul>
-<table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/unknow-1.png">
-        <td/><center/><img src="/assets/blog/render/capture-yysls/unknow-2.png">
-</table>
+<li>绘制带有mipmap的深度图（1024x512 R16）（省电没有这一步 | 平衡：3级mips | 质量和极致：10级mips）
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/depth-mips.png" alt="">
+          </td> 
+        </tr>
+      </table></li>
+<li>由带有mipmap的深度图、法线图、阴影图生成，生成了不知道有什么作用的RT，猜测是用来实现深度雾（省电没有这一步）<table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/unknow-1.png" alt="">
+      </td>
 
+      <td>
+        <img src="/assets/blog/render/capture-yysls/unknow-2.png" alt="">
+      </td></tr>
+</table></li>
+</ul>
 <h1 id="降低分辨率及绘制粒子"><a href="#降低分辨率及绘制粒子" class="headerlink" title="降低分辨率及绘制粒子"></a>降低分辨率及绘制粒子</h1><ul>
-<li>降低分辨率，进行后续粒子特效的绘制（省电：1200x675 -&gt; 600x337 | 平衡：1280x720 -&gt; 640x360 | 质量和极致：1300x731 -&gt; 650x365）<br><img src="/../../assets/blog/render/capture-yysls/sub-sampled.png" alt="sub-sampled.png"></li>
-<li>像是绘制与地形有关的RT？（省电没有这一步）<br><img src="/../../assets/blog/render/capture-yysls/unknow-3.png" alt="unknow-3.png"></li>
-<li>绘制特效粒子，这个阶段用到了一开始生成的四张RT<br><img src="/../../assets/blog/render/capture-yysls/particle.png" alt="particle.png"></li>
+<li>降低分辨率，进行后续粒子特效的绘制（省电：1200x675 -&gt; 600x337 | 平衡：1280x720 -&gt; 640x360 | 质量和极致：1300x731 -&gt; 650x365）
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/sub-sampled.png" alt="">
+          </td> 
+        </tr>
+      </table></li>
+<li>像是绘制与地形有关的RT？（省电没有这一步）
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/unknow-3.png" alt="">
+          </td> 
+        </tr>
+      </table></li>
+<li>绘制特效粒子，这个阶段用到了一开始生成的四张RT
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/particle.png" alt="">
+          </td> 
+        </tr>
+      </table></li>
 </ul>
 <h1 id="绘制半透对象"><a href="#绘制半透对象" class="headerlink" title="绘制半透对象"></a>绘制半透对象</h1><ul>
 <li>使用不知道有什么作用的RT（猜测是深度雾）进行了全屏的后处理</li>
-<li>使用与地形有关的RT，看着像是对地形进行了什么处理<br><img src="/../../assets/blog/render/capture-yysls/unknow-4.png" alt="unknow-4.png"></li>
+<li>使用与地形有关的RT，看着像是对地形进行了什么处理
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/unknow-4.png" alt="">
+          </td> 
+        </tr>
+      </table></li>
 <li>使用绘制特效粒子的RT，将粒子特效绘制到GBuffer0上</li>
 <li>绘制蜻蜓、睫毛、眉毛、头发等半透对象，绘制蜻蜓的时候也用到了一开始生成的四张RT，应该是用于控制蜻蜓的移动</li>
 </ul>
 <h1 id="Bloom与ToneMapping"><a href="#Bloom与ToneMapping" class="headerlink" title="Bloom与ToneMapping"></a>Bloom与ToneMapping</h1><ul>
 <li>省电：没有降低分辨率和模糊的过程，直接由GBuffer0经由lut矫正生成</li>
 <li>平衡：1280x720 -&gt; 320x180 -&gt; 模糊 -&gt; 80x45 -&gt; 模糊 -&gt; 亮度提取 -&gt; 将各个分辨率的结果从小到大叠加混合，最后再用lut进行矫正</li>
-<li>质量和极致：1300x731 -&gt; 325x182 -&gt; 模糊x3 -&gt; 81x45 -&gt; 模糊x3 -&gt; 20x11 -&gt; 模糊x3 -&gt; 5x4 -&gt; 模糊 -&gt; 亮度提取 -&gt; 将各个分辨率的结果从小到大叠加混合，最后再用lut进行矫正</li>
-</ul>
-<table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/tone-mapping-1.png"> ToneMapping前
-        <td/><center/><img src="/assets/blog/render/capture-yysls/tone-mapping.png"> ToneMapping LUT
-</table>
-<table><tr/><center/><img src="/assets/blog/render/capture-yysls/tone-mapping-2.png"> ToneMapping后 </table>
+<li>质量和极致：1300x731 -&gt; 325x182 -&gt; 模糊x3 -&gt; 81x45 -&gt; 模糊x3 -&gt; 20x11 -&gt; 模糊x3 -&gt; 5x4 -&gt; 模糊 -&gt; 亮度提取 -&gt; 将各个分辨率的结果从小到大叠加混合，最后再用lut进行矫正<table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/tone-mapping-1.png" alt="ToneMapping前">
+        <div style="text-align: center; font-size: 12px; color: #888888"> ToneMapping前 </div>
+      </td>
 
+      <td>
+        <img src="/assets/blog/render/capture-yysls/tone-mapping.png" alt="ToneMapping LUT">
+        <div style="text-align: center; font-size: 12px; color: #888888"> ToneMapping LUT </div>
+      </td></tr>
+</table>
+
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/tone-mapping-2.png" alt="ToneMapping后">
+            <div style="text-align: center; font-size: 12px; color: #888888"> ToneMapping后 </div>
+          </td> 
+        </tr>
+      </table></li>
+</ul>
 <h1 id="SMAA"><a href="#SMAA" class="headerlink" title="SMAA"></a>SMAA</h1><ul>
-<li>对角色周围的像素进行SMAA处理</li>
-</ul>
-<table>
-    <tr/>
-        <td/><center/><img src="/assets/blog/render/capture-yysls/smaa-1.png"> SMAA Step1
-        <td/><center/><img src="/assets/blog/render/capture-yysls/smaa-3.png"> SMAA Step2
-        <td/><center/><img src="/assets/blog/render/capture-yysls/smaa-2.png"> SMAA LUT
-</table>
-<table><tr/><center/><img src="/assets/blog/render/capture-yysls/smaa-result.png"> SMAA Result </table>
+<li>对角色周围的像素进行SMAA处理<table>
+<tr>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/smaa-1.png" alt="SMAA Step1">
+        <div style="text-align: center; font-size: 12px; color: #888888"> SMAA Step1 </div>
+      </td>
 
-<h1 id="绘制UI"><a href="#绘制UI" class="headerlink" title="绘制UI"></a>绘制UI</h1><table><tr/><center/><img src="/assets/blog/render/capture-yysls/draw-ui.png"></table>
+      <td>
+        <img src="/assets/blog/render/capture-yysls/smaa-3.png" alt="SMAA Step2">
+        <div style="text-align: center; font-size: 12px; color: #888888"> SMAA Step2 </div>
+      </td>
+
+      <td>
+        <img src="/assets/blog/render/capture-yysls/smaa-2.png" alt="SMAA LUT">
+        <div style="text-align: center; font-size: 12px; color: #888888"> SMAA LUT </div>
+      </td></tr>
+</table>
+
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/smaa-result.png" alt="SMAA Result">
+            <div style="text-align: center; font-size: 12px; color: #888888"> SMAA Result </div>
+          </td> 
+        </tr>
+      </table></li>
+</ul>
+<h1 id="绘制UI"><a href="#绘制UI" class="headerlink" title="绘制UI"></a>绘制UI</h1>
+      <table>
+        <tr>
+          <td>
+            <img src="/assets/blog/render/capture-yysls/draw-ui.png" alt="">
+          </td> 
+        </tr>
+      </table>
 
 
 
